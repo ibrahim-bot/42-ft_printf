@@ -6,27 +6,12 @@
 /*   By: ichougra <ichougra@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 13:50:31 by ichougra     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/12 18:44:02 by ichougra    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/12 19:45:40 by ichougra    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	print_struct(t_bool *new)
-{
-	printf("\nargs = %c\n", new->args);
-	printf("nb = %d\n", new->nb);
-	printf("cp_nb = %ld\n", new->cp_nb);
-	printf("unb = %u\n", new->unb);
-	printf("pre = %d\n", new->pre);
-	printf("min = %d\n", new->min);
-	printf("zero = %d\n", new->zero);
-	printf("left = %d\n", new->left);
-	printf("cas = %d\n", new->cas);
-	printf("str = %s\n", new->str);
-	printf("_______________\n");
-}
 
 int		cmpt_nb(long nb)
 {
@@ -75,7 +60,6 @@ int		print_option(const char *str, va_list ap, t_bool *new, ...)
 				return (new->ret);
 			if (scan_line(str, &i, new, ap) == 1)
 				new->cas = 1;
-		//	print_struct(new);
 			testing_min(new);
 			if (new->cas != 4)
 				display(str, i, new);
@@ -84,8 +68,6 @@ int		print_option(const char *str, va_list ap, t_bool *new, ...)
 			new->ret += write(1, &str[i], 1);
 		i++;
 	}
-	// if (new->cas == 1 && new->args != 's')
-	// 	new->ret += ft_putchar('\n');
 	return (new->ret);
 }
 
@@ -97,8 +79,9 @@ int		ft_printf(const char *str, ...)
 
 	i = 0;
 	va_start(args, str);
-	if (str[i])
 	i = print_option(str, args, &new);
+	if ((new.args == 'x' || new.args == 'X') && new.pre != 0)
+		free(new.str);
 	va_end(args);
 	return (i);
 }

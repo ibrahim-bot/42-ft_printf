@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 17:00:58 by ichougra     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/11 18:05:51 by ichougra    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/12 18:58:41 by ichougra    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,6 +38,8 @@ int				ft_printf(const char *str, ...)
 	 __attribute__((format(printf,1,2)));
 void			display(const char *str, int i, t_bool *new);
 size_t			ft_putstr(char *str);
+void			cas_max(t_bool *new);
+int				tchek_null(t_bool *new);
 size_t			ft_putchar(char c);
 void			ft_putnbr(long nb);
 void			ft_putnbr_un(unsigned int n);

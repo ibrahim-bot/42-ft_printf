@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/11 12:31:59 by ichougra     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/12 17:49:01 by ichougra    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/12 19:41:36 by ichougra    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,7 +26,7 @@ int		calcul_t(t_bool *new)
 	{
 		if (new->pre < ft_strlen(new->str))
 			return (new->pre);
-		else 
+		else
 			return (ft_strlen(new->str));
 	}
 	return (0);

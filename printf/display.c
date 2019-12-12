@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/20 21:28:50 by ichougra     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/12 18:46:12 by ichougra    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/12 19:41:30 by ichougra    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,11 +40,8 @@ int		print_nullneg(t_bool *new, int nb)
 
 void	print_string(t_bool *new)
 {
-	if (new->str == NULL)
-	{
-		print_null(new);
+	if (tchek_null(new) == 1)
 		return ;
-	}
 	if (ft_strlen(new->str) == 0)
 		new->left = 0;
 	if (new->pre > 0 && new->left == 0)
@@ -102,19 +99,6 @@ void	display_cont(t_bool *new)
 		new->ret += ft_putchar(new->nb);
 	if (new->min != 0 && new->left != 0)
 		print4(new);
-}
-
-void	cas_max(t_bool *new)
-{
-	if (new->pre > 0)
-	{
-		if (new->nb == -2147483648)
-		{
-			new->cp_nb = new->nb;
-			new->cp_nb *= -1;
-			new->pre += 1;
-		}
-	}
 }
 
 void	display(const char *str, int i, t_bool *new)

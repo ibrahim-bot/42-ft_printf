@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/05 12:40:02 by ichougra     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/10 14:25:28 by ichougra    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/12 19:24:44 by ichougra    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,15 +55,16 @@ void	ft_putnbr(long nb)
 
 void	init_struct(t_bool *new)
 {
-	new->cas = 0;
+	new->nb = 0;
+	new->cp_nb = 0;
+	new->unb = 0;
 	new->left = 0;
 	new->pre = -1;
 	new->zero = 0;
-	new->nb = 0;
+	new->cas = 0;
 	new->min = 0;
-	new->str = "";
 	new->args = ' ';
-	new->unb = 0;
+	new->str = "";
 }
 
 int		charset(char c, const char *set)
